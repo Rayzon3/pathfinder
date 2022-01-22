@@ -27,13 +27,13 @@ const Grid = () => {
     setGrid(grid);
   };
 
-  const Spot = function (i: number, j: number) {
-    const x: number = i;
-    const y: number = j;
-    let g: number = 0;
-    let f: number = 0;
-    let h: number = 0;
-  };
+  function Spot(this: any, i: number, j: number) {
+    this.x = i;
+    this.y = j;
+    this.g = 0;
+    this.f = 0;
+    this.h = 0;
+  }
 
   console.log(Grid);
 
