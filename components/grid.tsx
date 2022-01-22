@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import Node from "./node";
 
 const Grid = () => {
-  const rows: number = 5;
-  const cols: number = 5;
+  const rows: number = 8;
+  const cols: number = 8;
 
   const [Grid, setGrid] = useState<number[][]>([]);
 
@@ -36,8 +36,24 @@ const Grid = () => {
   }
 
   console.log(Grid);
+  const gridWithNode = () => {
+    return (
+      <div>
+        <h1>Hello from grid</h1>
+        {Grid.map((row, rowIndex) => {
+          return (
+            <div key={rowIndex} className="flex">
+              {row.map((col, colIndex) => {
+                return <Node key={colIndex} />;
+              })}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
 
-  return <div></div>;
+  return <div className="max-w-lg m-auto">{gridWithNode()}</div>;
 };
 
 export default Grid;
