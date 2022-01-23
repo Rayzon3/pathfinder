@@ -4,6 +4,14 @@
 
 @layer components {
   .node {
-    @apply flex w-20 h-20 border-2 border-solid border-black;
+    @apply flex w-6 h-6 border-2 border-solid border-black;
+  }
+
+  .node-start {
+    @apply bg-green-500;
+  }
+
+  .node-end {
+    @apply bg-red-600;
   }
 }
