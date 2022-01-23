@@ -51,7 +51,15 @@ const Grid = () => {
             <div key={rowIndex} className="flex">
               {row.map((col: any, colIndex) => {
                 const { isStart, isEnd } = col;
-                return <Node key={colIndex} isStart={isStart} isEnd={isEnd} />;
+                return (
+                  <Node
+                    key={colIndex}
+                    isStart={isStart}
+                    isEnd={isEnd}
+                    row={rowIndex}
+                    col={colIndex}
+                  />
+                );
               })}
             </div>
           );
