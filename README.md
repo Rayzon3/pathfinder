@@ -15,7 +15,7 @@ A\* is an informed search algorithm, or a best-first search, meaning that it is 
 
 here n is the next node on the path, g(n) is the cost of the path from the start node to n, and h(n) is a heuristic function that estimates the cost of the cheapest path from n to the goal.
 
-### Made using
+## Made using
 
 - TypeScript
 - Next.js
