@@ -18,7 +18,7 @@ here n is the next node on the path, g(n) is the cost of the path from the start
 ## Made using
 
 - TypeScript
-- Next.js
+- Next.js (overkill for this kind of project...but still :P )
 - Tailwind CSS
 
 ## Steps to run this project
