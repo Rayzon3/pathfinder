@@ -4,7 +4,7 @@
 
 @layer components {
   .node {
-    @apply flex w-6 h-6 border-2 border-solid border-black;
+    @apply flex w-5 h-5 border-2 border-solid border-black;
   }
 
   .node-start {
