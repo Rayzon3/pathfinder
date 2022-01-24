@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import Node from "./node";
 import Astar from "../algorithms/astar";
 
-const rows: number = 25;
-const cols: number = 25;
+const rows: number = 5;
+const cols: number = 5;
 const NODE_START_ROW: number = 0;
 const NODE_START_COL: number = 0;
 const NODE_END_ROW: number = rows - 1;

@@ -14,6 +14,14 @@ function Astar(startNode: any, endNode: any) {
 
     let current = openSet[leastIndex];
     if (current === endNode) {
+      let temp = current;
+      path.push(temp);
+      while (temp.previous) {
+        path.push(temp.previous);
+        temp = temp.previous;
+      }
+      console.log(path);
+      return path;
       console.log("Path found !!");
     }
 
@@ -38,7 +46,7 @@ function Astar(startNode: any, endNode: any) {
           openSet.push(neighbour);
         }
         if (newPath) {
-          neighbour.h = heruistic(neighbour, endNode);
+          neighbour.h = heuristic(neighbour, endNode);
           neighbour.f = neighbour.h + neighbour.g;
           neighbour.previous = current;
         }
@@ -47,8 +55,8 @@ function Astar(startNode: any, endNode: any) {
   }
 }
 
-function heruistic(a: { x: any; y: any }, b: { x: any; y: any }) {
-  let d = Math.abs(a.x - a.y) + Math.abs(b.x - b.y);
+function heuristic(a: { x: number; y: number }, b: { x: number; y: number }) {
+  let d = Math.abs(b.x - a.x) + Math.abs(b.y - a.y); // using manhattan distance as heuristic
   return d;
 }
 
