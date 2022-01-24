@@ -1,7 +1,8 @@
 function Astar(startNode: any, endNode: any) {
   let openSet = []; //nodes we have to visit
   let closedSet = []; //nodes already visited
-  let path = []; //nodes on shortest path
+  let path: any[] = []; //nodes on shortest path
+  let visitedNodes: number[] = [];
 
   openSet.push(startNode);
   while (openSet.length > 0) {
@@ -13,6 +14,7 @@ function Astar(startNode: any, endNode: any) {
     }
 
     let current = openSet[leastIndex];
+    visitedNodes.push(current);
     if (current === endNode) {
       let temp = current;
       path.push(temp);
@@ -20,9 +22,7 @@ function Astar(startNode: any, endNode: any) {
         path.push(temp.previous);
         temp = temp.previous;
       }
-      console.log(path);
-      return path;
-      console.log("Path found !!");
+      return { path, visitedNodes };
     }
 
     openSet = openSet.filter((element): any => element != current);
@@ -32,7 +32,7 @@ function Astar(startNode: any, endNode: any) {
     let neighbours = current.neighbours;
     for (let i = 0; i < neighbours.length; i++) {
       let neighbour = neighbours[i];
-      if (!closedSet.includes(neighbour)) {
+      if (!closedSet.includes(neighbour) && !neighbour.isWall) {
         let tempG = current.g + 1;
         let newPath = false;
         if (openSet.includes(neighbour)) {
@@ -53,6 +53,8 @@ function Astar(startNode: any, endNode: any) {
       }
     }
   }
+
+  return { path, visitedNodes, error: "No Path Found :/" };
 }
 
 function heuristic(a: { x: number; y: number }, b: { x: number; y: number }) {
