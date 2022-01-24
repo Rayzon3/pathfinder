@@ -16,39 +16,38 @@ function Astar(startNode: any, endNode: any) {
     if (current === endNode) {
       console.log("Path found !!");
     }
-    console.log("path not found :/");
 
-    openSet = openSet.filter((element): boolean => element != current);
+    openSet = openSet.filter((element): any => element != current);
     closedSet.push(current);
     console.log(closedSet);
 
     let neighbours = current.neighbours;
     for (let i = 0; i < neighbours.length; i++) {
-      let neigbhour = neighbours[i];
-      if (!closedSet.includes(neigbhour)) {
+      let neighbour = neighbours[i];
+      if (!closedSet.includes(neighbour)) {
         let tempG = current.g + 1;
         let newPath = false;
-        if (openSet.includes(neigbhour)) {
-          if (tempG < neigbhour.g) {
-            neigbhour.g = tempG;
+        if (openSet.includes(neighbour)) {
+          if (tempG > neighbour.g) {
+            neighbour.g = tempG;
             newPath = true;
-          } else {
-            neigbhour.g = tempG;
-            newPath = true;
-            openSet.push(neigbhour);
           }
-          if (newPath) {
-            neigbhour.h = heruistic(neigbhour, endNode);
-            neigbhour.f = neigbhour.h + neigbhour.g;
-            neigbhour.pervious = current;
-          }
+        } else {
+          neighbour.g = tempG;
+          newPath = true;
+          openSet.push(neighbour);
+        }
+        if (newPath) {
+          neighbour.h = heruistic(neighbour, endNode);
+          neighbour.f = neighbour.h + neighbour.g;
+          neighbour.previous = current;
         }
       }
     }
   }
 }
 
-function heruistic(a: { x: number; y: number }, b: { x: number; y: number }) {
+function heruistic(a: { x: any; y: any }, b: { x: any; y: any }) {
   let d = Math.abs(a.x - a.y) + Math.abs(b.x - b.y);
   return d;
 }
