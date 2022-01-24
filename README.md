@@ -1,6 +1,6 @@
 # PathFinder
 
-This is web app shows the visualization of the very popular a-star(A\*) algorithm.
+This web app shows the visualization of the very popular a-star(A\*) algorithm.
 
 
 ![Screen Recording 2022-01-24 at 4 16 09 PM](https://user-images.githubusercontent.com/51912472/150771585-3ed14250-ce27-4ca8-b52d-10ddab1c6426.gif)
@@ -28,3 +28,9 @@ Run project
 ```bash
 yarn dev
 ```
+
+## Features I will be adding soon
+
+- Ability to add custom walls 🧱
+- Generate Mazes 🗺
+- More Algorithms ⚙️
