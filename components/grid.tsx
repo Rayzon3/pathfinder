@@ -131,7 +131,7 @@ const Grid = () => {
         }, 80 * i);
       } else {
         setTimeout(() => {
-          const node = VisitedNodes[i];
+          const node = VisitedNodes[i] as any;
           document.getElementById(`node-${node.x}-${node.y}`).className =
             "node node-visited";
         }, 80 * i);
