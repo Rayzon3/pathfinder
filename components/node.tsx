@@ -1,4 +1,16 @@
-const Node = ({ isStart, isEnd, row, col, isWall }) => {
+const Node = ({
+  isStart,
+  isEnd,
+  row,
+  col,
+  isWall,
+}: {
+  isStart: number;
+  isEnd: number;
+  row: number;
+  col: number;
+  isWall: boolean;
+}) => {
   const classes = isStart
     ? "node-start"
     : isWall
