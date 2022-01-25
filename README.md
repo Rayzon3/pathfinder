@@ -2,7 +2,7 @@
 
 This web app shows the visualization of the very popular a-star(A\*) algorithm.
 
-https://user-images.githubusercontent.com/51912472/150974802-ac7b4ba3-fbf5-4e76-a325-0ed26a64efd3.mov
+https://user-images.githubusercontent.com/51912472/150975007-32857ab2-9376-408c-b430-667d8892cbeb.mov
 
 ## About A\* Algorithm
 
