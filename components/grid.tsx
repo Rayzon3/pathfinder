@@ -54,7 +54,7 @@ const Grid = () => {
     }
   };
 
-  function Spot(this: any, i: number, j: number) {
+  const Spot = function (this: any, i: number, j: number) {
     this.x = i;
     this.y = j;
     this.isStart = this.x === NODE_START_ROW && this.y === NODE_START_COL;
@@ -84,7 +84,7 @@ const Grid = () => {
         this.neighbours.push(grid[i][j + 1]);
       }
     };
-  }
+  } as any as { new (i: number, j: number): any };
 
   // console.log(Grid);
   const gridWithNode = () => {
