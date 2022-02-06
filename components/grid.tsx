@@ -5,10 +5,10 @@ import Astar from "../algorithms/astar";
 
 const rows: number = 25;
 const cols: number = 25;
-const NODE_START_ROW: number = 0;
-const NODE_START_COL: number = 0;
-const NODE_END_ROW: number = rows - 1;
-const NODE_END_COL: number = cols - 1;
+let NODE_START_ROW: number = Math.floor(Math.random() * (24 - 0 + 1) + 0);
+let NODE_START_COL: number = Math.floor(Math.random() * (24 - 0 + 1) + 0);
+let NODE_END_ROW: number = Math.floor(Math.random() * (24 - 0 + 1) + 0);
+let NODE_END_COL: number = Math.floor(Math.random() * (24 - 0 + 1) + 0);
 
 const Grid = () => {
   const [Grid, setGrid] = useState<number[][]>([]);
